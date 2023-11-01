@@ -1,0 +1,25 @@
+.content{
+    width: 100%;
+    position: absolute;
+    top: 30%;
+}
+.left-coll{
+    margin-left: 6%;
+}
+.left-coll{
+    float: right;
+    margin-right: 65%;
+    margin-top: 400px;
+    display: flex;
+    align-items: center;
+}
+.left-coll p{
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    margin-right: 10px;
+}
+#icon{
+    width: 80px;
+    cursor: pointer;
+}

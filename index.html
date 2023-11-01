@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
+  <title>My Website</title>
+  <link rel="icon" type="image/x-icon" href="./icons8-dragon-32.png">
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <h1><span>T</span>he <span>A</span>bby <span>R</span>oad</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="#hero" data-after="Home">Home</a></li>
+            <li><a href="./gallery.html" data-after="Gallery">Gallery</a></li>
+            <li><a href="./dog.html" data-after="Surprise">Surprise</a></li>
+            <li><a href="#about" data-after="About">About</a></li>
+            <li><a href="#contact" data-after="Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1>Hello, <span></span></h1>
+        <h1>My Name is <span></span></h1>
+        <h1>Pratik <span></span></h1>
+      </div>
+    </div>
+    <div class="content">
+      <div class="left-coll">
+        <p>Click Here to Listen Music</p>
+        <img src="./play.png" id="icon">
+      </div>
+    </div>
+    <audio id="mySong">
+      <source src="./music.mp3" type="audio/mp3">
+    </audio>
+    <script>
+      var mySong= document.getElementById("mySong");
+      var icon = document.getElementById("icon");
+
+      icon.onclick =function(){
+        if(mySong.paused){
+          mySong.play();
+          icon.src="./pause.png";
+        }
+        else{
+          mySong.pause();
+          icon.src="./play.png";
+        }
+      }
+    </script>
+  </section>
+  
+  <!-- End Hero Section  -->
+
+  
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about container">
+      <div class="col-left">
+        <div class="about-img">
+          <img src="./profile.jpg" alt="img">
+        </div>
+      </div>
+      <div class="col-right">
+        <h1 class="section-title">About <span>me</span></h1>
+        <h2>A High Schooler</h2>
+        <p>I am a student at Trinity International High School.</p>
+        <a href="#" class="cta">Download CV</a>
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact container">
+      <div>
+        <h1 class="section-title">Contact <span>info</span></h1>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+          <div class="contact-info">
+            <h1>Phone</h1>
+            <h2>+977 9741826431</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+          <div class="contact-info">
+            <h1>Email</h1>
+            <h2>prateekban9898@gmail.com</h2>
+            <h2>pratik.ban@trinity.edu.np</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+          <div class="contact-info">
+            <h1>Address</h1>
+            <h2>Sinamangal, Kathmandu</h2>
+            <h2>Nepal</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>P</span>ratik <span>B</span>an</h1>
+      </div>
+      <h2>My Socials</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="https://www.facebook.com/pra.tik.5602728"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="https://www.instagram.com/banz.pratik_/"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="https://twitter.com/banz_pratik"><img src="https://img.icons8.com/plasticine/100/undefined/twitter.png" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
