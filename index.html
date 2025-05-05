@@ -166,12 +166,24 @@
       </div>
     </div>
 
- <div class="brand">
-        <h1><span>Get in</span><span> Touch</span></h1>
-      </div>
+<!-- wrap everything in a section with the ID we targeted in CSS -->
+<section id="contact-form">
+  <!-- this is the “card” wrapper -->
+  <div class="contact-box">
+
+    <!-- your brand/title -->
+    <div class="brand">
+      <h1 class="section-title">
+        <span>Get in</span>
+        <!-- add the accent class to the “Touch” span -->
+        <span class="accent">Touch</span>
+      </h1>
+    </div>
+
+    <!-- the form itself -->
     <form
       class="contact-form"
-       action="https://formspree.io/f/xyzwwzoo"
+      action="https://formspree.io/f/xyzwwzoo"
       method="POST"
     >
       <div class="field">
@@ -192,7 +204,8 @@
       </div>
       <button type="submit" class="btn-send">Send Message</button>
     </form>
- 
+  </div>
+</section>
 
 
   </section>
