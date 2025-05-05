@@ -496,31 +496,37 @@ a.funky-link:hover::after {
 	color: white;
 	font-size: 1.3rem;
 }
-/* Place this in your main stylesheet, or inside a <style> block */
 /* ————————————————————————————
    Footer “Get in Touch” section
    ———————————————————————————— */
 #contact-form {
-  background: #111;                /* match your bottom-most background */
-  padding: 60px 20px;
-  text-align: center;
+  background: #111;                /* match your footer background */
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;        /* center horizontally */
+  align-items: center;            /* center vertically if container has height */
 }
-#contact-form .contact-inner {
-  max-width: 500px;
-  margin: 0 auto;
+#contact-form .contact-box {
+  width: 100%;
+  max-width: 600px;                /* bigger box */
+  background: #1f2937;             /* dark card – tweak if you prefer white */
+  border-radius: 8px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-align: center;              /* center title & button */
 }
 #contact-form .section-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #fff;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   letter-spacing: 0.05em;
 }
 #contact-form .section-title .accent {
-  color: #ff4c4c;                  /* your site’s red accent color */
+  color: #ff4c4c;
 }
 #contact-form .contact-form .field {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 #contact-form .contact-form input,
 #contact-form .contact-form textarea {
@@ -528,8 +534,8 @@ a.funky-link:hover::after {
   background: #fff;
   border: none;
   border-radius: 4px;
-  padding: 12px 14px;
-  font-size: 0.95rem;
+  padding: 14px 16px;
+  font-size: 1rem;
   font-family: inherit;
   transition: box-shadow 0.2s, transform 0.2s;
 }
@@ -541,12 +547,12 @@ a.funky-link:hover::after {
 }
 #contact-form .btn-send {
   display: inline-block;
-  background: #ff6b6b;             /* coral-style button */
+  background: #ff6b6b;
   color: #fff;
   border: none;
   border-radius: 4px;
-  padding: 12px 32px;
-  font-size: 1rem;
+  padding: 14px 40px;
+  font-size: 1.1rem;
   cursor: pointer;
   font-family: inherit;
   transition: background 0.3s, transform 0.2s;
@@ -555,7 +561,6 @@ a.funky-link:hover::after {
   background: #ff4c4c;
   transform: translateY(-2px);
 }
-
 /* End Footer */
 
 /* Keyframes */
