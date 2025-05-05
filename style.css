@@ -500,7 +500,7 @@ a.funky-link:hover::after {
    Footer “Get in Touch” section
    ———————————————————————————— */
 #contact-form {
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);                /* match your footer background */
+  background: #111;                /* match your footer background */
   padding: 80px 20px;
   display: flex;
   justify-content: center;        /* center horizontally */
