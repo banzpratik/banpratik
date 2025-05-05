@@ -496,6 +496,55 @@ a.funky-link:hover::after {
 	color: white;
 	font-size: 1.3rem;
 }
+/* Place this in your main stylesheet, or inside a <style> block */
+.contact-footer {
+  background: #222;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+.contact-footer h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.contact-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+  transform: translateY(-2px);
+}
+.contact-form button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.contact-form button:hover {
+  background: #ff4757;
+  transform: translateY(-2px);
+}
+
 /* End Footer */
 
 /* Keyframes */
