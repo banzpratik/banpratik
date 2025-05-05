@@ -499,63 +499,57 @@ a.funky-link:hover::after {
 /* ————————————————————————————
    Footer “Get in Touch” section
    ———————————————————————————— */
+/* 1. Make sure the outer wrapper is a flex-column and centers everything */
 #contact-form {
-  background: #111;                /* match your footer background */
-  padding: 80px 20px;
   display: flex;
-  justify-content: center;        /* center horizontally */
-  align-items: center;            /* center vertically if container has height */
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically */
+  padding: 80px 20px;
+  background: #111;
 }
+
+/* 2. Center the card (if you aren’t already wrapping in .contact-box, add that wrapper!) */
 #contact-form .contact-box {
+  margin: 0 auto;           /* extra insurance for centering */
+}
+
+/* 3. Turn the form into a column flex and center its children */
+#contact-form .contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  max-width: 600px;                /* bigger box */
-  background: #1f2937;             /* dark card – tweak if you prefer white */
-  border-radius: 8px;
-  padding: 40px 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  text-align: center;              /* center title & button */
+  max-width: 600px;
 }
-#contact-form .section-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  color: #fff;
-  margin-bottom: 32px;
-  letter-spacing: 0.05em;
-}
-#contact-form .section-title .accent {
-  color: #ff4c4c;
-}
+
+/* 4. Constrain the inputs/textareas and center them */
 #contact-form .contact-form .field {
+  width: 100%;
+  max-width: 500px;         /* or whatever feels right */
   margin-bottom: 20px;
 }
 #contact-form .contact-form input,
 #contact-form .contact-form textarea {
-  width: 100%;
+  width: 100%;              /* fill that 500px slot */
+  padding: 14px 16px;
   background: #fff;
   border: none;
   border-radius: 4px;
-  padding: 14px 16px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition: box-shadow .2s, transform .2s;
 }
-#contact-form .contact-form input:focus,
-#contact-form .contact-form textarea:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255,76,76,0.3);
-  transform: translateY(-2px);
-}
+
+/* 5. Center + size the button */
 #contact-form .btn-send {
-  display: inline-block;
+  width: 200px;             /* fixed width so it doesn’t stretch */
+  margin-top: 16px;
+  text-align: center;
+  padding: 14px 0;
   background: #ff6b6b;
   color: #fff;
   border: none;
   border-radius: 4px;
-  padding: 14px 40px;
-  font-size: 1.1rem;
   cursor: pointer;
-  font-family: inherit;
-  transition: background 0.3s, transform 0.2s;
+  transition: background .3s, transform .2s;
 }
 #contact-form .btn-send:hover {
   background: #ff4c4c;
