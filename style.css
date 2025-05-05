@@ -497,51 +497,62 @@ a.funky-link:hover::after {
 	font-size: 1.3rem;
 }
 /* Place this in your main stylesheet, or inside a <style> block */
-.contact-footer {
-  background: #222;
-  color: #fff;
+/* ————————————————————————————
+   Footer “Get in Touch” section
+   ———————————————————————————— */
+#contact-form {
+  background: #111;                /* match your bottom-most background */
   padding: 60px 20px;
   text-align: center;
 }
-.contact-footer h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-.contact-container {
+#contact-form .contact-inner {
   max-width: 500px;
   margin: 0 auto;
 }
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+#contact-form .section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
 }
-.contact-form input,
-.contact-form textarea {
-  padding: 12px 15px;
+#contact-form .section-title .accent {
+  color: #ff4c4c;                  /* your site’s red accent color */
+}
+#contact-form .contact-form .field {
+  margin-bottom: 16px;
+}
+#contact-form .contact-form input,
+#contact-form .contact-form textarea {
+  width: 100%;
+  background: #fff;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 4px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: box-shadow 0.2s, transform 0.2s;
 }
-.contact-form input:focus,
-.contact-form textarea:focus {
+#contact-form .contact-form input:focus,
+#contact-form .contact-form textarea:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+  box-shadow: 0 0 0 3px rgba(255,76,76,0.3);
   transform: translateY(-2px);
 }
-.contact-form button {
-  padding: 12px 20px;
-  font-size: 1rem;
-  background: #ff6b6b;
+#contact-form .btn-send {
+  display: inline-block;
+  background: #ff6b6b;             /* coral-style button */
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
+  padding: 12px 32px;
+  font-size: 1rem;
   cursor: pointer;
+  font-family: inherit;
   transition: background 0.3s, transform 0.2s;
 }
-.contact-form button:hover {
-  background: #ff4757;
+#contact-form .btn-send:hover {
+  background: #ff4c4c;
   transform: translateY(-2px);
 }
 
