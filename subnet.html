@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IP Subnet Calculator</title>
+  <title>IP-Subnet Calculator</title>
+  <link rel="icon" href="subnetlogo.png" type="image/png">
+
   <style>
-    /* Google Font */
+   
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,13 +25,13 @@
       background: rgba(0, 0, 0, 0.7);
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-      width: 90vw;
-      max-width: 90vw;
+      width: 600px;
+      max-width: 90%;
       padding: 2rem;
       overflow: visible;
+      text-align: center;
     }
     h1 {
-      text-align: center;
       margin-bottom: 1.5rem;
       font-weight: 600;
       letter-spacing: 1px;
@@ -39,6 +41,7 @@
       margin-bottom: 0.5rem;
       display: block;
       font-size: 1.1rem;
+      text-align: left;
     }
     input {
       width: 100%;
@@ -66,6 +69,7 @@
     button:hover { background: #153749; }
     #table-container {
       margin-top: 1.5rem;
+      overflow-x: auto;
     }
     table {
       width: 100%;
@@ -110,7 +114,7 @@
     function longToIp(long) {
       return [24,16,8,0].map(shift => (long >>> shift) & 0xFF).join('.');
     }
-    function calculate() {
+    document.getElementById('calc').addEventListener('click', function() {
       const ipStr = document.getElementById('ip').value.trim();
       const prefix = parseInt(document.getElementById('prefix').value, 10);
       const newPrefixVal = document.getElementById('newPrefix').value.trim();
@@ -124,8 +128,8 @@
       const ipNum = ipToLong(ipStr);
       const maskOrig = prefix === 0 ? 0 : (0xFFFFFFFF << (32 - prefix)) >>> 0;
       const network = ipNum & maskOrig;
-
       const newPrefix = newPrefixVal === '' ? prefix : parseInt(newPrefixVal, 10);
+
       if (newPrefix < prefix || newPrefix > 32) {
         container.textContent = 'New prefix must be ≥ original prefix and ≤ 32.';
         return;
@@ -134,10 +138,8 @@
       const blockSize = 1 << (32 - newPrefix);
       const count = 1 << (newPrefix - prefix);
 
-      // build table
       const table = document.createElement('table');
-      let thead = '<thead><tr><th>#</th><th>Network</th><th>Mask</th><th>Broadcast</th><th>First Host</th><th>Last Host</th></tr></thead>';
-      table.innerHTML = thead;
+      table.innerHTML = '<thead><tr><th>#</th><th>Network</th><th>Mask</th><th>Broadcast</th><th>First Host</th><th>Last Host</th></tr></thead>';
       const tbody = document.createElement('tbody');
 
       for (let i = 0; i < count; i++) {
@@ -146,19 +148,18 @@
         const first = newPrefix < 31 ? net + 1 : net;
         const last = newPrefix < 31 ? broadcast - 1 : broadcast;
         const row = document.createElement('tr');
-        row.innerHTML =
-          `<td>${i + 1}</td>` +
-          `<td>${longToIp(net)}/${newPrefix}</td>` +
-          `<td>${longToIp((0xFFFFFFFF << (32 - newPrefix)) >>> 0)}</td>` +
-          `<td>${longToIp(broadcast)}</td>` +
-          `<td>${longToIp(first)}</td>` +
-          `<td>${longToIp(last)}</td>`;
+        row.innerHTML = `
+          <td>${i + 1}</td>
+          <td>${longToIp(net)}/${newPrefix}</td>
+          <td>${longToIp((0xFFFFFFFF << (32 - newPrefix)) >>> 0)}</td>
+          <td>${longToIp(broadcast)}</td>
+          <td>${longToIp(first)}</td>
+          <td>${longToIp(last)}</td>`;
         tbody.appendChild(row);
       }
       table.appendChild(tbody);
       container.appendChild(table);
-    }
-    document.getElementById('calc').addEventListener('click', calculate);
+    });
   </script>
 </body>
 </html>
