@@ -344,30 +344,36 @@ a.funky-link {
   position: relative;
   display: inline-block;
   padding: 0.2em 0.4em;
-  background: linear-gradient(135deg, #ff0080, #ff8c00);
-  background-size: 200% 200%;
+  background: linear-gradient(270deg, #ff0000, #000000);
+  background-size: 400% 400%;
   border-radius: 0.6em;
   transition: transform 0.3s ease;
-  animation: hue-cycle 5s linear infinite, neon 1.5s ease-in-out infinite alternate;
+  animation: redBlackFlow 4s ease infinite, neon 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes redBlackFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes neon {
   0%, 100% {
     text-shadow:
       0 0 4px #fff,
-      0 0 10px #ff0080,
-      0 0 20px #ff0080;
+      0 0 10px #ff0000,
+      0 0 20px #ff0000;
   }
   50% {
     text-shadow:
       0 0 6px #fff,
-      0 0 20px #8cff00,
-      0 0 30px #8cff00;
+      0 0 20px #000000,
+      0 0 30px #000000;
   }
 }
 
 a.funky-link:hover {
-  transform: translateY(-4px) scale(2.05) rotate(-1deg);
+  transform: translateY(-2px) scale(1.1) rotate(-1deg);
 }
 
 a.funky-link::after {
@@ -387,10 +393,6 @@ a.funky-link:hover::after {
   transform: scaleX(1);
 }
 
-@keyframes hue-cycle {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
-}
 
 .para-dhup {
 	flex-direction: column-reverse;
