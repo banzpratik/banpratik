@@ -337,6 +337,7 @@ p {
 	color: rgb(60, 113, 179);
 }
 
+/* 1) The base link style */
 a.funky-link {
   font-family: 'Rubik', sans-serif;
   font-weight: 700;
@@ -350,34 +351,41 @@ a.funky-link {
   background-size: 400% 400%;
   border-radius: 0.6em;
   transition: transform 0.3s ease;
-  animation: redBlackFlow 4s ease infinite, neon 1.5s ease-in-out infinite alternate;
+  /* two infinite animations: the flowing gradient + the neon pulse */
+  animation:
+    redBlackFlow 4s ease infinite,
+    neon        1.5s ease-in-out infinite alternate;
 }
 
+/* 2) The gradient-shift keyframes */
 @keyframes redBlackFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
 }
 
+/* 3) The neon text-shadow pulse */
 @keyframes neon {
-  0%, 100% {
+  0%,100% {
     text-shadow:
-      0 0 4px #fff,
+      0 0 4px  #fff,
       0 0 10px #ff0000,
       0 0 20px #ff0000;
   }
   50% {
     text-shadow:
-      0 0 6px #fff,
-      0 0 20px #000000,
-      0 0 30px #000000;
+      0 0 6px  #fff,
+      0 0 20px #000,
+      0 0 30px #000;
   }
 }
 
+/* 4) Hover transform */
 a.funky-link:hover {
   transform: translateY(-2px) scale(1.1) rotate(-1deg);
 }
 
+/* 5) Underline grow on hover */
 a.funky-link::after {
   content: '';
   position: absolute;
@@ -390,7 +398,6 @@ a.funky-link::after {
   transform-origin: left center;
   transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1);
 }
-
 a.funky-link:hover::after {
   transform: scaleX(1);
 }
